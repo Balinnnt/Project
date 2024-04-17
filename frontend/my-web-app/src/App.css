@@ -1,0 +1,183 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.leftSide {
+  flex: 0.3;
+  background-color: #404258;
+  padding: 20px;
+}
+
+.rightSide {
+  flex: 0.7;
+  background-color: #6B728E;
+  padding: 20px;
+ 
+}
+
+h1, h2, h3  {
+  color: white;
+}
+
+.leftSide ul,
+.leftSide li {
+  list-style: none;
+  padding: 0;
+}
+
+.leftSide li {
+  cursor: pointer;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.rightSide h2 {
+  white-space: nowrap; /* Ne engedje, hogy a szöveg több sorba tördeljen */
+  overflow: hidden; /* Rejtse el a túlcsorduló részeket */
+  text-overflow: ellipsis; /* Jelölje meg a túlcsorduló részeket három ponttal */
+}
+
+.rightSide p,
+.rightSide li {
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.Modal,
+.Modal2,
+.Modalnd {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 20px;
+  /* Az azonos stílusokat egy szabályba vonhatod össze, és csak a specifikus tulajdonságokat adod meg a megfelelő modális ablakokhoz */
+}
+
+.Modal {
+  background-color: #404258;
+  height: 50%;
+  width: 50%;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.Modal2 {
+  color: white;
+  background-color: #404258;
+  max-width: 400px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.Modalnd {
+  color: white;
+  background-color: #404258;
+  max-width: 600px;
+}
+
+.modal-content-nd input[type="text"],
+.modal-content-nd textarea {
+  width: calc(100% - 40px); /* A szélesség kiszámítása a padding miatt */
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.modal-content-nd textarea {
+  height: 200px; /* Állítsd be a kívánt magasságot */
+  overflow-y: auto; /* Lehetővé teszi a függőleges görgetést, ha a tartalom túl hosszú */
+}
+
+.modal-content-nd button {
+  background-color: #555;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* A gombok a konténer jobb oldalára kerülnek */
+  margin-top: 20px;
+}
+
+.Close-Button {
+  bottom: 20px; /* Ha nagyobb margóra van szüksége, itt állíthatja be az értéket */
+  right: 20px; /* Ha nagyobb margóra van szüksége, itt állíthatja be az értéket */
+  cursor: pointer;
+  font-size: 20px;
+  background-color: #555;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  display: flex;
+  font-size: 20px;
+  align-items: baseline;
+  margin-left: 10px; 
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-yes,
+.delete-no {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 17px;
+  margin-right: 20px;
+}
+
+.add-new-data-button {
+  display: flex;
+  font-size: 20px;
+  margin-top: 40px ;
+  align-items: baseline; 
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-yes:hover,
+.delete-no:hover,
+.delete-button:hover,
+.add-new-data-button:hover,
+.modal-content-nd button:hover,
+.Close-Button:hover {
+  background-color: #ff0000;
+  color: white;
+}
