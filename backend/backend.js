@@ -8,19 +8,14 @@ app.use(cors());
 app.use(express.json());
 
 
-/*const connection = mysql.createConnection({
-  host: 'http://nodejs1.dszcbaross.edu.hu:22001',
+  const connection = mysql.createConnection({
+  host: 'http://nodejs2.dszcbaross.edu.hu:22001',
   user: 'u65_7wmzBJtJbL',
   password: '2e96tcReGLX@0x=mj!ow1OPq',
   database: 's65_db'
-});*/
-
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 's65_db'
 });
+
+
 
 // MySQL kapcsolat ellenőrzése
 connection.connect((err) => {
@@ -77,7 +72,7 @@ app.delete('/deleteuser/:UserID', (req, res) => {
         return;
       }
 
-     
+
       res.status(200).send('Felhasználó és jegyzetei sikeresen törölve.');
     });
   });
@@ -116,11 +111,10 @@ app.post('/addnote', (req, res) => {
 });
 
 
-/*app.post('/login', (req, res) => {
+/*
+app.post('/login', (req, res) => {
   const { username, password } = req.body;
-
   const query = 'SELECT * FROM user WHERE username = ? AND password = ? AND Eligibility = 1';
-
   connection.query(query, [username, password], (err, results) => {
     if (err) {
       console.error('Hiba a bejelentkezés során: ', err);
@@ -135,7 +129,8 @@ app.post('/addnote', (req, res) => {
       }
     }
   });
-});*/
+});
+*/
 
 
 // MySQL kapcsolat lezárása
