@@ -17,7 +17,7 @@ const App = () => {
 
   const fetchUsers = async () => {
     try {
-      const usersResponse = await fetch('http://localhost:8000/getfelhasznalok');
+      const usersResponse = await fetch('http://nodejs1.dszcbaross.edu.hu:22001/admin/getfelhasznalok');
       const usersData = await usersResponse.json();
       setAllUsers(usersData);
       setLoading(false);
@@ -30,7 +30,7 @@ const App = () => {
   const fetchNotes = async (UserID) => {
     try {
       if (UserID) {
-        const notesResponse = await fetch(`http://localhost:8000/getjegyzetek/${UserID}`);
+        const notesResponse = await fetch(`http://nodejs1.dszcbaross.edu.hu:22001/admin/getjegyzetek/${UserID}`);
         const notesData = await notesResponse.json();
         setFilteredNotes(notesData);
       } else {
@@ -64,7 +64,7 @@ const App = () => {
 
   const confirmDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/deleteuser/${selectedUserID}`, {
+      const response = await fetch(`http://nodejs1.dszcbaross.edu.hu:22001/admin/deleteuser/${selectedUserID}`, {
         method: 'DELETE',
       });
 
@@ -102,7 +102,7 @@ const App = () => {
     }
   
     // Küldjük el az új jegyzetet a backend felé
-    fetch('http://localhost:8000/addnote', {
+    fetch('http://nodejs1.dszcbaross.edu.hu:22001/admin/addnote', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ const App = () => {
                   <h2 className="Title">{note.Title}</h2>
                 </li>
               ))}
-              {showAddButton && ( // Csak akkor jelenítjük meg az új adat hozzáadása gombot, ha showAddButton igaz
+              {showAddButton && ( 
                 <button onClick={handleAddNewData} className="add-new-data-button">
                   Új adat hozzáadás
                 </button>
